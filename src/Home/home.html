@@ -1,0 +1,19 @@
+<template>
+<div class="row">
+ <div class="col-md-4 panel" style="height:300px;" repeat.for="bill of bills" >
+        <div class="col-md-12">${bill.id}</div>
+        <div class="col-md-12">${bill.title}</div>
+        <div class="col-md-12">${bill.updated_at}</div>
+
+        <input type="text-area" value.bind="bill.comment"/>
+        <button click.delegate="postComment(bill, bill.comment)">Click Me</button>
+            <ul>
+                <li repeat.for="comment of bill.comments">
+                    ${comment}
+                </li>
+                </ul>
+    </div>
+</div>
+   
+
+</template>
